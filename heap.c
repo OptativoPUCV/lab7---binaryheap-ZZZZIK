@@ -95,8 +95,9 @@ void heap_pop(Heap* pq){
       if (hijo_izq < pq->size && pq->heapArray[hijo_izq].priority > pq->heapArray[padre].priority) {
          padre = hijo_izq;
       }
-
-      if (hijo_derec < pq->size && pq->heapArray[hijo_derec].priority > pq->heapArray[padre].priority) {
+     
+      //if(pq->heapArray[hijo_derec].priority > pq->heapArray[padre].priority && hijo_derec < pq->size)
+      if(pq->heapArray[hijo_derec].priority > pq->heapArray[padre].priority && hijo_derec < pq->size) {
          padre = hijo_derec;
       }
       if(padre==i)break;
