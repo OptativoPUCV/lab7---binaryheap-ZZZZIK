@@ -149,3 +149,17 @@ heap.c:87:13: error: expected ‘;’ before ‘}’ token
       | ~            
 Compilation failed
 6deeb4f
+Thu 28 Sep 2023 06:52:43 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:85:48: error: expected ‘;’ before ‘pq’
+   85 |   pq->heapArray[0] = pq->heapArray[ultimo_dato]
+      |                                                ^
+      |                                                ;
+   86 |   //Eliminamos el nuevo ultimo dato (raíz).
+   87 |   pq->size--
+      |   ~~                                            
+Compilation failed
+e77774d

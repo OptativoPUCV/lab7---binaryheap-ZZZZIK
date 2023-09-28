@@ -82,7 +82,7 @@ void heap_pop(Heap* pq){
 
   int ultimo_dato=pq->size-1;
   //Cambio último dato por la raíz.
-  pq->heapArray[0] = pq->heapArray[ultimo_dato];
+  pq->heapArray[0] = pq->heapArray[ultimo_dato]
   //Eliminamos el nuevo ultimo dato (raíz).
   pq->size--
   
