@@ -30,11 +30,47 @@ void* heap_top(Heap* pq){
   return raiz;
 }
 
+/*
 
+3. Implemente la función `void heap_push(Heap* pq, void* data, int p)`. Esta función inserta un nuevo dato con prioridad `p` en el montículo. Si no recuerda como insertar datos en el montículo puede ver las [diapositivas](https://docs.google.com/presentation/d/1ZjXWMf6g05WdICqvno_oyRvorjAThABgbRGbEqc7mYU/edit#slide=id.g55ac49ed61_0_167).
+
+
+*/
 
 void heap_push(Heap* pq, void* data, int priority){
 
+  if (pq->size == pq->capac) {
+    pq->capac *= 2;
+    pq->heapArray = realloc(pq->heapArray,pq->capac*sizeof(heapElem));
+  }
+  
+  heapElem elemento;
+  elemento.priority=priority;
+  elemento.data=data;
+
+  pq->heapArray[pq->size]=elemento;
+  pq->size++;
+
+  int actual=pq->size-1;
+  
+  while(actual>0){
+    int padre=(actual-1)/2;
+    heapElem elem_actual = pq->heapArray[actual]
+    heapElem elem_padre= pq->heapArray[padre]
+
+    if(elem_actual.priority>elem_padre.priority){
+      pq->heapArray[actual]=elem_padre;
+      pq->heapArray[padre] = elem_actual;
+
+      actual=padre;
+      
+    }else{
+      break;
+    }
+  }
 }
+
+
 
 
 void heap_pop(Heap* pq){
