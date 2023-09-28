@@ -78,9 +78,18 @@ void heap_push(Heap* pq, void* data, int priority){
 
 
 void heap_pop(Heap* pq){
-  if (pq->size==0){
-    return;
-  }
+  if (pq->size==0) return;
+
+  int ultimo_dato=pq->size-1;
+  //Cambio último dato por la raíz.
+  pq->heapArray[0] = pq->heapArray[ultimo_dato];
+  //Eliminamos el nuevo ultimo dato (raíz).
+  pq->size--;
+  
+
+
+  
+
 }
 
 
