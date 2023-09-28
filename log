@@ -85,3 +85,23 @@ heap.c:57:9: error: unused variable ‘padre’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 60f4faf
+Thu 28 Sep 2023 06:09:46 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:61:5: error: expected ‘,’ or ‘;’ before ‘if’
+   61 |     if(elem_actual.priority>elem_padre.priority){
+      |     ^~
+heap.c:67:6: error: ‘else’ without a previous ‘if’
+   67 |     }else{
+      |      ^~~~
+heap.c:59:14: error: unused variable ‘elem_padre’ [-Werror=unused-variable]
+   59 |     heapElem elem_padre= pq->heapArray[padre]
+      |              ^~~~~~~~~~
+heap.c:58:14: error: unused variable ‘elem_actual’ [-Werror=unused-variable]
+   58 |     heapElem elem_actual = pq->heapArray[actual];
+      |              ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1497bd6

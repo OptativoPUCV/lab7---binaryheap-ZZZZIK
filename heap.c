@@ -55,7 +55,7 @@ void heap_push(Heap* pq, void* data, int priority){
   
   while(actual>0){
     int padre=(actual-1)/2;
-    heapElem elem_actual = pq->heapArray[actual]
+    heapElem elem_actual = pq->heapArray[actual];
     heapElem elem_padre= pq->heapArray[padre]
 
     if(elem_actual.priority>elem_padre.priority){
